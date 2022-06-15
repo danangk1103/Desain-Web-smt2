@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Animas Transisi CSS3</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style type="text/css">
+        .box{
+            width: 40%;
+            height: 100px;
+            background: orange;
+            border: 2px solid #212121;     
+        }
+
+        /*Landscape*/
+        @media (orientation:landscape){
+            .box{
+                border-radius: 50%;
+                background-color: blue;
+                animation: putar 2s linear infinite;              
+                                    
+            }
+        }
+
+        @keyframes putar{
+            0%{
+                width: 100%;
+            }
+
+            100%{
+                width: 100%;
+                transform: rotate(360deg);
+            }
+        }
+        
+    </style>
+
+</head>
+<body>
+    <h3>Transisi CSS3</h3>
+    
+    <div class="box"></div>
+    <p>
+        ubah orientasi menjadi landscape/potrait dan sebaliknya untuk melihat efek transisi
+    </p>
+</body>
+</html>

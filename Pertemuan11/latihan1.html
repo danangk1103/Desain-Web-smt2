@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Sederhana</title>
+    <style>
+        body {
+            font-family: system-ui;
+            background: turquoise;
+            color: black;
+            text-align: center;}
+    </style>
+ 
+</head>
+<body>   
+    <div align="center">
+        <form name="form1" action="#">
+        <p>Bilg1  <input type="text" name="x" /></p>
+        <p>Bilg2  <input type="text" name="y" /></p>
+        <p>Hasil <input type="text" name="hasil" disabled="true" /></p>
+        <p>Operator <select name="operator"></p>
+            <option value="tambah"> + (tambah)</option>
+            <option value="kurang"> - (kurang)</option>
+            <option value="kali"> * (kali)</option>
+            <option value="bagi"> / (bagi)</option>
+        </select>
+        <input type="button" value="=" onClick="hitung()" />
+        <input type="button" value="CLEAR" onClick="resetForm()" />
+        </form>
+    </div>
+    <script>
+        function hitung(){
+            var myForm = document.form1;
+            var x=eval(myForm.x.value);
+            var y=eval(myForm.y.value);
+            var pil= myForm.operator.value;
+            if (pil == "tambah") {
+            var z = x + y;
+            }else if (pil == "kurang") {
+            var z = x - y;
+            } else if (pil == "kali") {
+            var z = x * y;
+            } else if (pil == "bagi") {
+            var z = x / y;
+            }
+            myForm.hasil.value = z;
+            myForm.x.value = "";
+            myForm.y.value = "";
+            }
+            function resetForm(){
+            document.form1.reset();
+            }
+    </script>    
+</body>
+</html>
